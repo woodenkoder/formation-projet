@@ -1,20 +1,35 @@
 package com.nocturne.lanterne.commande;
 
-import java.util.Map;
-import java.util.concurrent.ConcurrentHashMap;
-import java.util.concurrent.atomic.AtomicLong;
+import java.math.BigDecimal;
 import org.springframework.stereotype.Service;
 
-/** Les règles des commandes. Pour l'instant, les commandes sont gardées en mémoire (la base arrive à la Cave). */
+/** La validation d'une commande. Ne modifie pas cette classe : écris ses tests. */
 @Service
 public class CommandeService {
 
-    private final AtomicLong sequence = new AtomicLong();
-    private final Map<Long, NouvelleCommande> commandes = new ConcurrentHashMap<>();
+    static final BigDecimal SEUIL_VALIDATION = new BigDecimal("500.00");
 
-    public CommandeCreee creer(NouvelleCommande commande) {
-        long id = sequence.incrementAndGet();
-        commandes.put(id, commande);
-        return new CommandeCreee(id, "EN_ATTENTE");
+    private final StockService stock;
+    private final CommandeRepository repository;
+    private final Notifications notifications;
+
+    public CommandeService(StockService stock, CommandeRepository repository, Notifications notifications) {
+        this.stock = stock;
+        this.repository = repository;
+        this.notifications = notifications;
+    }
+
+    public Commande valider(Commande commande) {
+        if (!stock.disponible(commande)) {
+            throw new StockInsuffisantException(commande);
+        }
+        if (commande.montant().compareTo(SEUIL_VALIDATION) > 0) {
+            Commande aValider = repository.enregistrer(commande.avecStatut("A_VALIDER"));
+            notifications.alerterValidation(aValider);
+            return aValider;
+        }
+        Commande validee = repository.enregistrer(commande.avecStatut("VALIDEE"));
+        notifications.confirmer(validee);
+        return validee;
     }
 }
