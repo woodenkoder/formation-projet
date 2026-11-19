@@ -26,7 +26,11 @@ Java 21 suffit (le wrapper Maven télécharge Maven) :
 
 | Branche | Épreuve |
 | --- | --- |
+| `exercice/golem` | 03.1 · Sortir la logique du controller |
+| `exercice/injection` | 03.2 · Passer à l'injection par constructeur |
 | `exercice/validation` | 03.3 · La validation sur un DTO |
+| `exercice/virement` | 03.4 · Corriger un virement enregistré à moitié |
+| `exercice/configuration` | 03.5 · Variables d'environnement, profils dev et prod |
 
 Les autres branches arrivent au fil des mises à jour du manoir.
 
