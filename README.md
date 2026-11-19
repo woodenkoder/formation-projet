@@ -42,6 +42,12 @@ Java 21 suffit (le wrapper Maven télécharge Maven) :
 | `exercice/auth` | 07.2 · Hacher avec bcrypt et émettre un JWT |
 | `exercice/autorisation` | 07.3 · Protéger les endpoints admin avec Spring Security |
 | `exercice/secrets-cors` | 07.4 · Sortir les secrets du code et régler CORS |
+| `exercice/docker` | 08.1 · Un Dockerfile multi-étapes |
+| `exercice/compose` | 08.2 · Compose avec l'app, PostgreSQL et un volume |
+| `exercice/ci` | 08.3 · Un workflow qui build et teste à chaque push |
+| `exercice/qualite` | 08.4 · Ajouter l'analyse et bloquer la PR si elle échoue |
+| `exercice/deploiement` | 08.5 · Un déploiement automatique sur tag |
+| `exercice/diagnostic` | 08.6 · Un script Bash de diagnostic lancé par ta CI |
 
 Les autres branches arrivent au fil des mises à jour du manoir.
 
