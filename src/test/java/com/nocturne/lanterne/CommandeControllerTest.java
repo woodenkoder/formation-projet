@@ -11,7 +11,9 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.http.MediaType;
 import org.springframework.test.web.servlet.MockMvc;
 
-@SpringBootTest
+// Les tests utilisent une base H2 en mémoire, jamais celle de la prod.
+@SpringBootTest(properties = {"spring.datasource.url=jdbc:h2:mem:lanterne", "spring.datasource.username=sa",
+        "spring.datasource.password="})
 @AutoConfigureMockMvc
 class CommandeControllerTest {
 
