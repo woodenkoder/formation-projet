@@ -1,10 +1,6 @@
 package com.nocturne.lanterne.commande;
 
-import java.util.List;
+import jakarta.validation.constraints.NotBlank;
 
 /** Ce que le client envoie pour passer une commande. */
-public record NouvelleCommande(String client, List<Ligne> lignes, String codePromo) {
-
-    /** Une ligne de la commande : un produit et sa quantité. */
-    public record Ligne(Long produitId, int quantite) {}
-}
+public record NouvelleCommande(@NotBlank String client) {}
