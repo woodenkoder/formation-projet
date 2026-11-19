@@ -1,5 +1,6 @@
 package com.nocturne.lanterne.commande;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -12,11 +13,8 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/api/commandes")
 public class CommandeController {
 
-    private final CommandeService service;
-
-    public CommandeController(CommandeService service) {
-        this.service = service;
-    }
+    @Autowired
+    private CommandeService service;
 
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
