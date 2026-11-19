@@ -48,6 +48,11 @@ Java 21 suffit (le wrapper Maven télécharge Maven) :
 | `exercice/qualite` | 08.4 · Ajouter l'analyse et bloquer la PR si elle échoue |
 | `exercice/deploiement` | 08.5 · Un déploiement automatique sur tag |
 | `exercice/diagnostic` | 08.6 · Un script Bash de diagnostic lancé par ta CI |
+| `exercice/circuit-breaker` | 09.2 · Circuit breaker et repli sur un appel externe |
+| `exercice/modules` | 09.4 · Isoler un module avec une frontière claire dans le monolithe |
+| `exercice/messages` | 09.6 · Publier et consommer un événement « commande créée » |
+| `exercice/agents` | 10.1 · Un fichier d'instructions pour agent dans ton dépôt |
+| `exercice/tests-ia` | 10.4 · Compléter les tests manquants avec l'IA jusqu'au seuil |
 
 Les autres branches arrivent au fil des mises à jour du manoir.
 
