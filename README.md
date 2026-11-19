@@ -36,6 +36,12 @@ Java 21 suffit (le wrapper Maven télécharge Maven) :
 | `exercice/erreurs` | 05.3 · Un @ControllerAdvice au format d'erreur standard |
 | `exercice/versions` | 05.4 · Une v2 d'un endpoint en gardant la v1 |
 | `exercice/doc-debit` | 05.5 · La doc Swagger et une limite de débit |
+| `exercice/mockito` | 06.2 · Les tests unitaires d'un service avec un mock |
+| `exercice/integration` | 06.4 · Un test d'intégration avec un vrai PostgreSQL |
+| `exercice/bdd` | 06.5 · Un scénario Cucumber du parcours d'achat |
+| `exercice/auth` | 07.2 · Hacher avec bcrypt et émettre un JWT |
+| `exercice/autorisation` | 07.3 · Protéger les endpoints admin avec Spring Security |
+| `exercice/secrets-cors` | 07.4 · Sortir les secrets du code et régler CORS |
 
 Les autres branches arrivent au fil des mises à jour du manoir.
 
