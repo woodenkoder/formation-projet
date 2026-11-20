@@ -1,0 +1,27 @@
+# La CI de ta Lanterne : le format, les règles de l'équipe, puis les tests.
+name: CI
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  qualite:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '21'
+          cache: maven
+      - name: Le format (Spotless)
+        run: ./mvnw -B spotless:check
+      - name: Les règles de l'équipe (Checkstyle)
+        run: ./mvnw -B checkstyle:check
+      - name: Les tests
+        run: ./mvnw -B verify
