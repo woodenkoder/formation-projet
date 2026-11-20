@@ -11,7 +11,9 @@ on:
   workflow_dispatch:
     inputs:
       exercice:
-        description: La branche exercice/… à corriger (vide = la branche choisie ci-dessus)
+        description: >-
+          La branche exercice/… à corriger, ou le code du combat (contribuer, conflit, hotfix).
+          Vide = la branche choisie ci-dessus.
         required: false
 
 permissions: {}
