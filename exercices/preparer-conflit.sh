@@ -24,8 +24,6 @@ if ! grep -q "        return STANDARD;" "$frais"; then
   echo "$frais a déjà été modifié : ce combat part de la version d'origine (return STANDARD;)."
   exit 1
 fi
-mkdir -p "$tests"
-
 # frais_port <constantes en plus> <ligne de calcul> : réécrit FraisPort.java (portable : Linux, macOS, Windows).
 frais_port() {
   cat >"$frais" <<JAVA
@@ -51,6 +49,7 @@ git switch --quiet main
 git switch --quiet --create exercice/seuil-livraison
 frais_port '    static final BigDecimal SEUIL = new BigDecimal("50.00");
 ' 'return montant.compareTo(SEUIL) >= 0 ? BigDecimal.ZERO : STANDARD;'
+mkdir -p "$tests"
 cat >"$tests/FraisPortSeuilTest.java" <<'JAVA'
 package com.nocturne.lanterne.frais;
 
@@ -80,6 +79,7 @@ git commit --quiet -m "feat: livraison gratuite dès 50 €"
 git switch --quiet main
 git switch --quiet --create exercice/livraison-premium
 frais_port '' 'return premium ? BigDecimal.ZERO : STANDARD;'
+mkdir -p "$tests"
 cat >"$tests/FraisPortPremiumTest.java" <<'JAVA'
 package com.nocturne.lanterne.frais;
 
