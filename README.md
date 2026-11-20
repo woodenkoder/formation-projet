@@ -10,7 +10,8 @@ L'API de gestion de commandes de **Nocturne**, que tu construis pièce après pi
 2. Dans le manoir : **Mon compte → Ton dépôt GitHub → Obtenir un code de liaison**.
 3. Dans ton dépôt : **Settings → Secrets and variables → Actions → New repository secret**, nom `MANOIR_CODE`,
    valeur : le code (valable 1 heure, une seule fois).
-4. Pousse sur une branche `exercice/…` : nos tests cachés tournent dans l'onglet **Actions**, et le résultat
+4. Pousse sur une branche `exercice/…` (ou lance le workflow « Manoir » avec le code du combat) : nos tests
+   cachés tournent dans l'onglet **Actions**, et le résultat
    arrive dans le manoir.
 
 ## Lancer la Lanterne
@@ -26,6 +27,12 @@ Java 21 suffit (le wrapper Maven télécharge Maven) :
 
 | Branche | Épreuve |
 | --- | --- |
+| `exercice/premier-workflow` | 00.1 · Ton dépôt et ton premier workflow vert |
+| `feature/contribuer` (code `contribuer`) | 01.1 · Ta première pull request dans les règles |
+| `exercice/en-retard` (préparée par `exercices/preparer-rebase.sh`) | 01.2 · Rebaser une branche en retard |
+| `exercice/seuil-livraison`, `exercice/livraison-premium` (préparées par `exercices/preparer-conflit.sh`, code `conflit`) | 01.3 · Résoudre un conflit préparé |
+| `hotfix/0.1.1` (code `hotfix`) | 01.5 · Un tag de version et une branche hotfix |
+| `exercice/linter` | 02.2 · Corriger les alertes du linter |
 | `exercice/golem` | 03.1 · Sortir la logique du controller |
 | `exercice/injection` | 03.2 · Passer à l'injection par constructeur |
 | `exercice/validation` | 03.3 · La validation sur un DTO |
