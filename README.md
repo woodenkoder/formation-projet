@@ -64,6 +64,8 @@ Java 21 suffit (le wrapper Maven télécharge Maven) :
 | `exercice/rag` | 11.2 · Un assistant qui répond sur la FAQ de Nocturne |
 | `exercice/evaluation` | 11.3 · Un jeu de tests qui évalue les réponses de l'assistant |
 | `exercice/injection-prompt` | 11.4 · Filtrer et cloisonner les entrées de l'assistant |
+| `exercice/description-pr` | 12.3 · Une description de PR conforme au modèle de l'équipe |
+| `exercice/mise-en-prod` | 13.2 · Le déploiement de ta Lanterne, réversible |
 
 Les autres branches arrivent au fil des mises à jour du manoir.
 
