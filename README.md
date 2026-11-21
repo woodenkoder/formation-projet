@@ -67,7 +67,15 @@ Java 21 suffit (le wrapper Maven télécharge Maven) :
 | `exercice/description-pr` | 12.3 · Une description de PR conforme au modèle de l'équipe |
 | `exercice/mise-en-prod` | 13.2 · Le déploiement de ta Lanterne, réversible |
 
-Les autres branches arrivent au fil des mises à jour du manoir.
+## Le Toit : ta Lanterne finale
+
+Les deux derniers combats testent ta Lanterne entière, sur `main`, depuis son image Docker, comme le feraient un
+client ou un attaquant. Ce qu'ils appellent et ce qu'ils attendent : [docs/CONTRAT.md](docs/CONTRAT.md).
+
+| Code (Actions → Manoir → Run workflow, branche `main`) | Combat |
+| --- | --- |
+| `jalons` | 13.1 · Les sept jalons de ta Lanterne |
+| `nuit` | 13.3 · La Nuit de la mise en prod, quatre incidents |
 
 ## Règles
 

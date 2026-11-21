@@ -12,7 +12,7 @@ on:
     inputs:
       exercice:
         description: >-
-          La branche exercice/… à corriger, ou le code du combat (contribuer, conflit, hotfix).
+          La branche exercice/… à corriger, ou le code du combat (contribuer, conflit, hotfix, jalons, nuit).
           Vide = la branche choisie ci-dessus.
         required: false
 
